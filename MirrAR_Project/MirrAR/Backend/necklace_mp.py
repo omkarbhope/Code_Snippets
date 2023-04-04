@@ -46,17 +46,10 @@ with mp_holistic.Holistic(
     
     
     # Draw landmark annotation on the image.
-    # image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-    # print(int(results.pose_landmarks.landmark[mp_holistic.PoseLandmark.LEFT_SHOULDER].x* width),int(results.pose_landmarks.landmark[mp_holistic.PoseLandmark.LEFT_SHOULDER].y* height))
-    # print(R_Shoulder)
-    # print(Neck)
+ 
     necklace(image,"YoYo",Neck,L_Shoulder,R_Shoulder)
-    # print(
-    #       f'Nose coordinates: ('
-    #       f'{results.pose_landmarks.landmark[mp_holistic.PoseLandmark.NOSE].x }, '
-    #       f'{results.pose_landmarks.landmark[mp_holistic.PoseLandmark.NOSE].y })'
-    #   )
+
     cv2.imshow('Necklace', image)
     if cv2.waitKey(5) & 0xFF == 27:
       break
